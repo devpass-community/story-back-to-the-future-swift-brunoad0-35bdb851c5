@@ -3,9 +3,11 @@ import Foundation
 extension Date {
     
     func dateAfter(years: Int) -> Date? {
-     
-        // TODO
-        return nil
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.year = years
+
+        return calendar.date(byAdding: dateComponents, to: self)
     }
     
     func formattedDate() -> String {
